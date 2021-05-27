@@ -96,7 +96,7 @@ def fun():
             #\print z
             #fun()
             #Button(root,text='Submit',font='Arial 8 bold',bg='grey',fg='black',command=fun).grid(row=5,column=1)
-            if cc==4:
+            if l==4:
                 r=Tk()
                 r.config(background='red')
                 r.title('Better Luck Next Time ')
@@ -114,7 +114,7 @@ def fun():
             
             #count(str(z))
             e2.delete(0,END)
-            if cc==4:
+            if l==0:
                 r=Tk()
                 r.config(background='red')
                 r.title('Better Luck Next Time ')
@@ -136,7 +136,7 @@ def fun():
             #askokcancel('Wrong guess','Your guess is too low')
             #fun()
             #Button(root,text='Submit',font='Arial 8 bold',bg='grey',fg='black',command=fun).grid(row=5,column=1)
-            if cc==4:
+            if l==0:
                 r=Tk()
                 r.config(background='red')
                 r.title('Better Luck Next Time ')
@@ -156,7 +156,7 @@ def fun():
             e2.delete(0,END)
             #fun()
             #Button(root,text='Submit',font='Arial 8 bold',bg='grey',fg='black',command=fun).grid(row=5,column=1)
-            if cc==4:
+            if l==0:
                 r=Tk()
                 r.config(background='red')
                 r.title('Better Luck Next Time ')
@@ -170,11 +170,11 @@ def fun():
         
         
                         
-        elif cc==4:
+        elif l==0:
                 r=Tk()
                 r.config(background='red')
                 r.title('Better Luck Next Time ')
-                Label(r,text='You are out of Your 4 Attempts...The correct answer is '+str(number),fg='black',bg='red',font='Calibri 40 bold' ).pack()
+                Label(r,text='You are out of Your 3 Attempts...The correct answer is '+str(number),fg='black',bg='red',font='Calibri 40 bold' ).pack()
                 root.destroy()
                 def de():
                     r.destroy()
@@ -182,6 +182,7 @@ def fun():
                 Button(r,text='Exit',fg='white',bg='black',font='Arial 10 bold',command=de).pack()
                 r.mainloop()
         else:
+            l=l-1
 
             
             Label(root,text='                                        YOU GOT IT RIGHT                                           ',font='Calibri 15 bold',bg='orange').grid(row=7,column=0)
