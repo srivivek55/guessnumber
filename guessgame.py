@@ -96,7 +96,7 @@ def fun():
             #\print z
             #fun()
             #Button(root,text='Submit',font='Arial 8 bold',bg='grey',fg='black',command=fun).grid(row=5,column=1)
-            if l==4:
+            if l==0:
                 r=Tk()
                 r.config(background='red')
                 r.title('Better Luck Next Time ')
