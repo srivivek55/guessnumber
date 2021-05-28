@@ -76,15 +76,12 @@ def fun():
     def fun1():
         global acc
         global l
+        global cc
     
        
         
         
-        def count(a):
-            
-            global cc
-            cc+=l
-            
+       
         if e2.get()=='':
             Label(root,text='                              *Enter valid Value*                                ',font='Calibri 15 bold',bg='orange').grid(row=7,column=0)
             
@@ -130,8 +127,9 @@ def fun():
         
         elif int(e2.get())<number:
             l-=1
+            cc+=1
             Label(root,text='*Your guess is too low...Enter Again       Attempts left- '+str(l),font='Calibri 15 bold',bg='orange').grid(row=7,column=0)
-            count(str(z))
+            #count(str(z))
             e2.delete(0,END)
             #askokcancel('Wrong guess','Your guess is too low')
             #fun()
@@ -150,9 +148,10 @@ def fun():
                 
         elif int(e2.get())>number:
             l-=1
+            cc+=1
             #askokcancel('Wrong guess','Your guess is too high')
             Label(root,text='*Your guess is too High...Enter Again       Attempts left- '+str(l),font='Calibri 15 bold',bg='orange').grid(row=7,column=0)
-            count(str(z))
+            #count(str(z))
             e2.delete(0,END)
             #fun()
             #Button(root,text='Submit',font='Arial 8 bold',bg='grey',fg='black',command=fun).grid(row=5,column=1)
@@ -183,11 +182,12 @@ def fun():
                 r.mainloop()
         else:
             l=l-1
+            cc+=1
 
             
             Label(root,text='                                        YOU GOT IT RIGHT                                           ',font='Calibri 15 bold',bg='orange').grid(row=7,column=0)
             
-            count(str(z))
+            #count(str(z))
             #e2.delete(0,END)
             #Label(root,text='*#*Your guess is correct in '+str(cc)+' attempt*#*',font='Calibri 18 bold').grid(row=6,column=0)
             root1=Tk()
@@ -199,11 +199,15 @@ def fun():
             #print gt
             #print 'attempts'
             #askokcancel('Right guess','Your guess is correct in '+str(gt)+' attempts')
-        
-            if cc==1:
-                acc=((4-cc)/3.0)*100.0
+            if l==2:
+                acc=100
+            elif l==1:
+                acc=66
+            elif l==0:
+                acc=33
             else:
-                acc=((3-cc)/3.0)*100.0
+                acc=0
+        
     Label(root,text=' ',bg='orange').grid(row=5,column=0)
     z=Button(root,text='Guess',font='Arial 10 bold',fg='white',bg='black',command=fun1).grid(row=6,column=0)
     #m=Button(root,text='Play Again',font='Arial 10 bold',fg='white',bg='black',command=dest).grid(row=6,column=0)
